@@ -1,32 +1,55 @@
 
 
 body {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
   margin: 0px;
 }
 
-.m-header {
-  margin: 0px;
-  background: url(HEADER1.png) no-repeat;
+header{
+  height: max-content;
+}
+.m-header__tittle {
+  display: flex;
+  background: url(HEADER1.png) no-repeat center center;
+  background-size: cover;
+  background-position: right;
   position: relative;
+  max-width: 100%;
+  height: max-content;
+  padding: 50px;
+  text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
+  flex-direction: row;
+  align-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+  .m-header {
+  margin: 0px;
   width: 100%;
   height: auto;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
-
-h1{
-  margin: 0px;
+ul{
+  margin: inherit;
 }
 
-.m-header__tittle {
-  background-size: contain;
-  max-width: 100%;
-  height: 40px;
-  padding: 50px;
-  margin: 0px auto;
-  text-align: center;
-  text-shadow: 1px 1px 1px black;
-  text-transform: uppercase;
-  display: block;
+h1{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .m-navbar__nav {
@@ -34,8 +57,16 @@ h1{
   text-align: center;
   border: 0px;
   padding: 0px;
-
 }
+
+nav {
+  display: flex;
+  flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+  align-items: stretch;
+}
+
 .m-navbar__nav__item {
   flex-grow: 1;
 }
@@ -62,9 +93,29 @@ h1{
   flex-grow: 0;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1560px) {
+  h1{
+   min-width: 1500;
+   font-size: 1em;
+   display: none;
+  }
+  .m-header__tittle {
+    padding: 69px;
+}
+
+@media only screen and (max-width: 600px) {
+  .m-header__tittle {
+    background-position: right;
+  }
+  h1{
+    min-width: 1500;
+   font-size: 1em;
+   display: none;
+  }
   .m-navbar__nav {
     flex-direction: column;
+    align-items: stretch;
+    align-content: center;
   }
   .m-navbar__nav__item a {
     border-right: none;
@@ -84,4 +135,3 @@ h2{
   background-color: tomato;
   height: 100%vh;
 }
-
