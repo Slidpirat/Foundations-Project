@@ -35,7 +35,7 @@ header{
   margin: 0px;
   width: 100%;
   height: auto;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 ul{
   margin: inherit;
@@ -77,7 +77,7 @@ nav {
   padding: 10px;
   transition: all 400ms linear;
   box-sizing: border-box;
-  border-right: dashed 2px #1e3454;
+  border-right: dashed 1px #1e3454;
   text-shadow: 1px 1px 1px black;
   text-transform: uppercase;
 }
@@ -87,7 +87,7 @@ nav {
   text-decoration: none;
 }
 .m-navbar__nav__item:first-child a {
-  border-left: dashed 2px #1e3454;
+  border-left: dashed 1px #1e3454;
 }
 .m-navbar__nav__item--fixed {
   flex-grow: 0;
@@ -119,19 +119,153 @@ nav {
   }
   .m-navbar__nav__item a {
     border-right: none;
-    border-bottom: dashed 2px #1e3454;
+    border-bottom: dashed 1px #1e3454;
   }
   .m-navbar__nav__item:first-child a {
     border-left: none;
-    border-top: dashed 2px #1e3454;
+    border-top: dashed 1px #1e3454;
   }
 }
 
 h2{
   margin: 0px;
 }
+
 .body-container {
+  background: url(oldtool.jpg) no-repeat;
+  background-size: cover;
+  }  
+}
+
+main {
   display: flex;
-  background-color: tomato;
-  height: 100%vh;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+
+.background-tools {
+
+}
+
+.box-tittle {
+  display: flex;
+ background-color: burlywood;
+ width: 95%;
+ height: fit-content;
+ font-size: 46px;
+ flex-direction: column;
+ align-items: center;
+ align-content: center;
+}
+
+.drawer-1 {
+ display: flex;
+ background-color: rgb(235, 28, 28);
+ width: 90%;
+ height: fit-content;
+ font-size: 46px;
+ flex-direction: column;
+ align-items: center;
+ align-content: center;
+ border: solid 1px;
+ border-bottom: 0px;
+ border-radius: 5px;
+}
+
+
+
+.drawer-2 {
+  display: flex;
+  background-color: rgb(235, 28, 28);
+  width: 90%;
+  height: fit-content;
+  font-size: 46px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: solid 1px;
+  border-bottom: 0px;
+  border-radius: 5px;
+ }
+
+ .drawer-3 {
+  display: flex;
+  background-color: rgb(235, 28, 28);
+  width: 90%;
+  height: fit-content;
+  font-size: 46px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: solid 1px;
+  border-bottom: 0px;
+  border-radius: 5px;
+ }
+
+ .drawer-4 {
+  display: flex;
+  background-color: rgb(235, 28, 28);
+  width: 90%;
+  height: fit-content;
+  font-size: 46px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: solid 1px;
+  border-bottom: 0px;
+  border-radius: 5px;
+ }
+
+ .drawer-5 {
+  display: flex;
+  background-color: rgb(235, 28, 28);
+  width: 90%;
+  height: fit-content;
+  font-size: 46px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: solid 1px;
+  border-bottom: 0px;
+  border-radius: 5px;
+ }
+
+ .drawer-6 {
+  display: flex;
+  background-color: rgb(235, 28, 28);
+  width: 90%;
+  height: fit-content;
+  font-size: 46px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: solid 1px;
+  border-bottom: 0px;
+  border-radius: 5px;
+ }
+
+ .drawer-7 {
+  display: flex;
+  background-color: rgb(235, 28, 28);
+  width: 90%;
+  height: fit-content;
+  font-size: 46px;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border: solid 1px;
+  border-radius: 5px;
+ }
+ .handle-text {
+  height: 75%;
+  width: fit-content;
+  background-color: gray;
+  border: solid 1px;
+  border-radius: 5px;
 }
