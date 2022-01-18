@@ -1,151 +1,34 @@
-// ScrewDriver Modal
-var modal = document.getElementById("screwdriverModal");
+const express = require('express');
+const app = express();
+const path = require('path');
 
-var driverBtn = document.getElementById("screwDrivers");
+// app.get('/', function(req, res){
+//   res.send('./public/index.js');
+// });
 
-var span = document.getElementsByClassName("close")[0];
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/main.html'))
+})
 
-driverBtn.onclick = function () {
-  modal.style.display = "block";
-};
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+app.get('/js', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.js'))
+})
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+app.get('/css', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/main.css'))
+})
 
-// Sockets and Rachets Modal
-var modal = document.getElementById("socketModal");
+app.get('/picture1', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/HEADER1.png'))
+})
 
-var socketBtn = document.getElementById("socketsRatchets");
+app.get('/picture2', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/main-tool.png'))
+})
 
-var span = document.getElementsByClassName("close")[1];
+const PORT = process.env.PORT || 5000;
 
-socketBtn.onclick = function () {
-  modal.style.display = "block";
-};
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Pliers Modal
-
-var modal = document.getElementById("pliersModal");
-
-var pliersBtn = document.getElementById("pliers");
-
-var span = document.getElementsByClassName("close")[2];
-
-pliersBtn.onclick = function () {
-  modal.style.display = "block";
-};
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Power Tools Modal
-
-var modal = document.getElementById("powerModal");
-
-var powerBtn = document.getElementById("powerTools");
-
-var span = document.getElementsByClassName("close")[3];
-
-powerBtn.onclick = function () {
-  modal.style.display = "block";
-};
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Specialty Tools Modal
-
-var modal = document.getElementById("specialtyModal");
-
-var specialtyBtn = document.getElementById("specialtyTools");
-
-var span = document.getElementsByClassName("close")[4];
-
-specialtyBtn.onclick = function () {
-  modal.style.display = "block";
-};
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Box End Wrenches Modal
-
-var modal = document.getElementById("boxendModal");
-
-var boxendBtn = document.getElementById("boxEnd");
-
-var span = document.getElementsByClassName("close")[5];
-
-boxendBtn.onclick = function () {
-  modal.style.display = "block";
-};
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Misc heavy Modal
-
-var modal = document.getElementById("heavyModal");
-
-var heavyBtn = document.getElementById("heavyTools");
-
-var span = document.getElementsByClassName("close")[6];
-
-heavyBtn.onclick = function () {
-  modal.style.display = "block";
-};
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};

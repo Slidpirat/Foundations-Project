@@ -1,5 +1,24 @@
 {
   "dependencies": {
+    "express": "^4.17.2",
     "postgresql": "^0.0.1"
-  }
+  },
+  "name": "foundations-project",
+  "description": "Foundations project application",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slidpirat/Foundations-Project.git"
+  },
+  "author": "Christian Dickerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Slidpirat/Foundations-Project/issues"
+  },
+  "homepage": "https://github.com/Slidpirat/Foundations-Project#readme"
 }
