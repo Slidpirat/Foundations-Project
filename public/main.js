@@ -1,36 +1,27 @@
 const locationContainer = document.querySelector("#location-container");
 const form = document.querySelector("form");
 const baseURL = "/";
-const rentalsEntry = (rentals) => showRentals(rentals);
+// const rentalsEntry = (rentals) => showRentals(rentals);
+// const button = document.querySelector("#add-tool-button")
 
-const getAllEntries = () =>
-  axios
-    .get(baseURL)
-    .then((res) => {
-      rentalsEntry(res.data);
-    })
+// const getAllEntries = () => axios.get(`/tools`)
+//     .then((res) => {rentalsEntry(res.data);})
+//     .catch((err) => console.log(err));
+
+const addEntry = (body) => axios.post(`/tools`, body)
+    .then((res) => {rentalsEntry(res.data);})
     .catch((err) => console.log(err));
 
-const addEntry = (body) =>
-  axios
-    .post(baseURL, body)
-    .then((res) => {
-      rentalsEntry(res.data);
-    })
-    .catch((err) => console.log(err));
-
-const deleteEntry = (id) =>
-  axios
-    .delete(`${baseURL}/${id}`)
-    .then((res) => {
-      rentalsEntry(res.data);
-    })
-    .catch((err) => console.log(err));
+// const deleteEntry = (id) =>
+//   axios.delete(`/tools/${id}`)
+//     .then((res) => {rentalsEntry(res.data);})
+//     .catch((err) => console.log(err));
 
 function submitButton(e) {
+  console.log('submitButton')
   e.preventDefault();
 
-  let id = { id }
+  // let id = { id }
   let name = document.querySelector("#name");
   let typetool = document.querySelector("#typetool");
   let image = document.querySelector("#picture");
@@ -71,9 +62,14 @@ function showRentals(arr) {
   }
 };
 
-form.addEventListener("submit", submitButton);
-
-getAllEntries();
+const test=() => {console.log('yes')}
+console.log(form)
+form.addEventListener('submit',function(e){
+    e.preventDefault()
+    console.log(e.target)
+});
+// console.log(button)
+// getAllEntries();
 
 // ScrewDriver Modal
 var modal = document.getElementById("screwdriverModal");
@@ -86,15 +82,15 @@ driverBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Sockets and Rachets Modal
 var modal = document.getElementById("socketModal");
@@ -107,15 +103,15 @@ socketBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Pliers Modal
 
@@ -129,15 +125,15 @@ pliersBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Power locations-container Modal
 
@@ -151,15 +147,15 @@ powerBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Specialty locations-container Modal
 
@@ -173,15 +169,15 @@ specialtyBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Box End Wrenches Modal
 
@@ -195,15 +191,15 @@ boxendBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // Misc heavy Modal
 
@@ -217,12 +213,12 @@ heavyBtn.onclick = function () {
   modal.style.display = "block";
 };
 
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };

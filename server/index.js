@@ -8,6 +8,8 @@ const axios = require('axios').default;
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/main.html'))
 });
@@ -30,7 +32,7 @@ app.get('/picture2', (req, res) => {
 });
 
 
-let id = 22;
+let id = 4;
 
 const rentals = [
     {
@@ -196,43 +198,44 @@ const rentals = [
     }   
 ]
 
-app.get('/rentals', (req, res) => {
+app.get('/tools', (req, res) => {
     res.status(200).send(rentals)
 });
 
-// app.delete('/rentals:id', (req, res) => {
+app.delete('/tools/:id', (req, res) => {
 
-//     const { id } = req.params;
+    const { id } = req.params;
 
-//     const tgtIndex = rentals.findIndex(function(entryObj) {
-//         return entryObj.id === parseInt(id); 
-//     })
+    const tgtIndex = rentals.findIndex(function(entryObj) {
+        return entryObj.id === parseInt(id); 
+    })
 
-//     if (tgtIndex === -1) {
-//         res.status(404).send('Entry not found')
-//     } else {
-//         rentals.splice(tgtIndex, 1);
-//         res.status(200).send(rentals);
-//     }
-// });
+    if (tgtIndex === -1) {
+        res.status(404).send('Entry not found')
+    } else {
+        rentals.splice(tgtIndex, 1);
+        res.status(200).send(rentals);
+    }
+});
 
-// app.post('/tools', (req, res) => {
-//     const { name, typetool, returns, image } = req.body;
+app.post('/tools', (req, res) => {
+    console.log('test')
+    const { name, typetool, returns, image } = req.body;
 
-//     const newEntry = {
-//         id,
-//         name,
-//         typetool,
-//         image,
-//         returns,
+    const newEntry = {
+        id,
+        name,
+        typetool,
+        image,
+        returns,
         
-//     }
+    }
 
-//     id++
-//     rentals.push(newEntry)
-//     res.status(200).send(rentals)
+    id++
+    rentals.push(newEntry)
+    res.status(200).send(rentals)
 
-// });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
