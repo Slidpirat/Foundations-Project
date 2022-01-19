@@ -188,18 +188,19 @@ main{
 
 /* Modal Content/Box */
 .modal-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  background-color: #af2d2d;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  height: 90%;
-  width: 80%;
-  border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #af2d2d;
+    margin: 3% auto;
+    padding: 28px;
+    border: 1px solid #888;
+    height: 90%;
+    width: 80%;
+    border-radius: 15px;
 }
+
 .tools {
   display: flex;
   flex-direction: row;
@@ -310,6 +311,10 @@ input[type='text'] {
   font-size: 20px;
   margin: 5px 0;
 } */
+
+text{
+  padding-bottom: 2px;
+}
 
 .btns-container {
   width: 100%; 

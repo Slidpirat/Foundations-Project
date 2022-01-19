@@ -1,4 +1,4 @@
-const locationContainer = document.querySelectorAll("#location-container");
+const locationContainer = document.querySelector("#location-container");
 const form = document.querySelector("form");
 const baseURL = "/";
 const rentalsEntry = (rentals) => showRentals(rentals);
@@ -30,7 +30,7 @@ const deleteEntry = (id) =>
 function submitButton(e) {
   e.preventDefault();
 
-  // let id = { id }
+  let id = { id }
   let name = document.querySelector("#name");
   let typetool = document.querySelector("#typetool");
   let image = document.querySelector("#picture");

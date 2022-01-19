@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require("cors");
-const axios = require('axios');
+const axios = require('axios').default;
 
 
 app.use(cors());
@@ -30,7 +30,7 @@ app.get('/picture2', (req, res) => {
 });
 
 
-let id = 4;
+let id = 22;
 
 const rentals = [
     {
@@ -193,15 +193,14 @@ const rentals = [
         "returns": "05/20/2023",
         "image": "https://www.stanleytools.com/NA/product/images/3000x3000x96/STHT60083/STHT60083_1.jpg",
         
-    },
-    
+    }   
 ]
 
-// app.get('/', (req, res) => {
-//     res.status(200).send(rentals)
-// });
+app.get('/rentals', (req, res) => {
+    res.status(200).send(rentals)
+});
 
-// app.delete('/:id', (req, res) => {
+// app.delete('/rentals:id', (req, res) => {
 
 //     const { id } = req.params;
 
@@ -217,7 +216,7 @@ const rentals = [
 //     }
 // });
 
-// app.post('/diary', (req, res) => {
+// app.post('/tools', (req, res) => {
 //     const { name, typetool, returns, image } = req.body;
 
 //     const newEntry = {
