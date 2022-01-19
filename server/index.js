@@ -9,23 +9,24 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/main.html'))
-});
-
-app.get('/js', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/main.js'))
+  res.sendFile(path.join(__dirname, '../public/main.html'))
 });
 
 app.get('/css', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/main.css'))
+    res.sendFile(path.join(__dirname, '../public/main.css'))
+  });
+
+app.get('/js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/main.js'))
 });
 
+
 app.get('/picture1', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/images/HEADER1.png'))
+  res.sendFile(path.join(__dirname, '../public/images/HEADER1.png'))
 });
 
 app.get('/picture2', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/images/main-tool.png'))
+  res.sendFile(path.join(__dirname, '../public/images/main-tool.png'))
 });
 
 
@@ -37,7 +38,7 @@ const rentals = [
         "name": "Joe Guy",
         "typetool": "#2 Yellow and Gray Phillips",
         "returns": "Will return 01/03/2021",
-        "image": "ttps://www.roadprobrands.com/Admin/Public/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
+        "image": "ttps://www.roadprobrands.com/Admin/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
         
     },
     {
@@ -106,7 +107,7 @@ const rentals = [
         "name": "Joe Guy",
         "typetool": "Medium Sized 12inch Crescent",
         "returns": "Will return 01/03/2021",
-        "image": "https://www.roadprobrands.com/Admin/Public/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
+        "image": "https://www.roadprobrands.com/Admin/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
         
     },
     {
@@ -129,7 +130,7 @@ const rentals = [
         "name": "Joe Guy",
         "typetool": "Medium Sized 12inch Crescent",
         "returns": "Will return 01/03/2021",
-        "image": "https://www.roadprobrands.com/Admin/Public/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
+        "image": "https://www.roadprobrands.com/Admin/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
         
     },
     {
@@ -152,7 +153,7 @@ const rentals = [
         "name": "Joe Guy",
         "typetool": "Medium Sized 12inch Crescent",
         "returns": "Will return 01/03/2021",
-        "image": "https://www.roadprobrands.com/Admin/Public/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
+        "image": "https://www.roadprobrands.com/Admin/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
         
     },
     {
@@ -175,7 +176,7 @@ const rentals = [
         "name": "Joe Guy",
         "typetool": "Medium Sized 12inch Crescent",
         "returns": "Will return 01/03/2021",
-        "image": "https://www.roadprobrands.com/Admin/Public/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
+        "image": "https://www.roadprobrands.com/Admin/GetImage.ashx?Image=/Files/Files/RoadPro/Products/RPS1013.jpg&Width=800&Height=800&altFmImage_path=/Files/Templates/Designs/RoadPro/images/no-image.jpg&Crop=5",
         
     },
     {
@@ -196,43 +197,43 @@ const rentals = [
     
 ]
 
-app.get('/app', (req, res) => {
-    res.status(200).send(rentals)
-});
+// app.get('/', (req, res) => {
+//     res.status(200).send(rentals)
+// });
 
-app.delete('/app/:id', (req, res) => {
+// app.delete('/:id', (req, res) => {
 
-    const { id } = req.params;
+//     const { id } = req.params;
 
-    const tgtIndex = rentals.findIndex(function(entryObj) {
-        return entryObj.id === parseInt(id); 
-    })
+//     const tgtIndex = rentals.findIndex(function(entryObj) {
+//         return entryObj.id === parseInt(id); 
+//     })
 
-    if (tgtIndex === -1) {
-        res.status(404).send('Entry not found')
-    } else {
-        rentals.splice(tgtIndex, 1);
-        res.status(200).send(rentals);
-    }
-});
+//     if (tgtIndex === -1) {
+//         res.status(404).send('Entry not found')
+//     } else {
+//         rentals.splice(tgtIndex, 1);
+//         res.status(200).send(rentals);
+//     }
+// });
 
-app.post('/diary', (req, res) => {
-    const { name, typetool, returns, image } = req.body;
+// app.post('/diary', (req, res) => {
+//     const { name, typetool, returns, image } = req.body;
 
-    const newEntry = {
-        id,
-        name,
-        typetool,
-        image,
-        returns,
+//     const newEntry = {
+//         id,
+//         name,
+//         typetool,
+//         image,
+//         returns,
         
-    }
+//     }
 
-    id++
-    rentals.push(newEntry)
-    res.status(200).send(rentals)
+//     id++
+//     rentals.push(newEntry)
+//     res.status(200).send(rentals)
 
-});
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

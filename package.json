@@ -11,7 +11,7 @@
   "version": "1.0.0",
   "main": "server/index.js",
   "scripts": {
-    "start": "node app",
+    "start": "node server/index.js",
     "dev": "nodemon app"
   },
   "repository": {
